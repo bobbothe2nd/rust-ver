@@ -35,24 +35,6 @@ impl TryFrom<&str> for Version {
     }
 }
 
-impl TryFrom<&String> for Version {
-    type Error = Error;
-
-    #[inline]
-    fn try_from(value: &String) -> Result<Self, Self::Error> {
-        value.parse()
-    }
-}
-
-impl TryFrom<String> for Version {
-    type Error = Error;
-
-    #[inline]
-    fn try_from(value: String) -> Result<Self, Self::Error> {
-        value.parse()
-    }
-}
-
 /// Represents a basic version with only 3 segments and no prerelease or build metadata
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct Version {
